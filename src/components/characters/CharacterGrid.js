@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import CharacterItem from './CharacterItem';
 
 const CharacterGrid = ({ items, isLoading }) => {
   return isLoading ? (
@@ -7,12 +7,10 @@ const CharacterGrid = ({ items, isLoading }) => {
   ) : (
     <section className='cards'>
       {items.map((item) => (
-        <h1>{item.name}</h1>
+        <CharacterItem key={item.char_id} item={item} />
       ))}
     </section>
   );
 };
-
-CharacterGrid.propTypes = {};
 
 export default CharacterGrid;
